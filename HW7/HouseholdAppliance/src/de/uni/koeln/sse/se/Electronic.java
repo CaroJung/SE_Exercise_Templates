@@ -22,6 +22,10 @@ public class Electronic implements HouseholdItem{
 		this.weight = weight;
 		this.fragile = fragile;
 	}
+	
+	public void accept(Visitor v) {
+		v.visitElectronic(this);
+	}
 
 	
 //Getters and Setters

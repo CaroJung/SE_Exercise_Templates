@@ -26,8 +26,24 @@ public static void main(String[] args) {
 		
         List<HouseholdItem> namesList = Arrays.asList(microwaveOven,tv,wineGlass,coffeeTable,bed,cupboard );
         householdItmes.addAll(namesList);
+      
 		
-  
+        MovingCosts MovingCostsVisitor = new MovingCosts();
+        PackingInstruction PackingInstructionVisitor = new PackingInstruction();
+        
+        //a. printout the moving costs for all six items
+        for(int i=0;i<householdItmes.size();i++) {
+        	System.out.println("Total Cost for " + householdItmes.get(i).getName() + " is: "
+        			+ MovingCostsVisitor.getMovingCosts(householdItmes.get(i))  + " Euros");
+        }
+        
+        System.out.println();
+        
+        //b. printout the packing instruction for all six items
+        for(int i=0;i<householdItmes.size();i++) {
+        	System.out.println(householdItmes.get(i).getName() + ": " 
+        			+ PackingInstructionVisitor.getPackingInstruction(householdItmes.get(i)));
+        }
 }
 
 }

@@ -7,19 +7,21 @@ public class Glass implements HouseholdItem{
 	int width;
 	int height;
 
-	int tickness;
+	int thickness;
 
 	
-	public Glass(String name, int lenght, int width, int height, int tickness) {
+	public Glass(String name, int lenght, int width, int height, int thickness) {
 		this.name = name;
 		this.lenght = lenght;
 		this.width = width;
 		this.height = height;
-		this.tickness = tickness;
+		this.thickness = thickness;
 	
 	}
 
-
+	public void accept(Visitor v) {
+		v.visitGlass(this);
+	}
 
 //Getters and Setters =
 
@@ -41,11 +43,11 @@ public class Glass implements HouseholdItem{
 	public void setWidth(int width) {
 		this.width = width;}
 
-	public Integer getTickness() {
-		return tickness;}
+	public Integer getThickness() {
+		return thickness;}
 
-	public void setTickness(int tickness) {
-		this.tickness = tickness;}
+	public void setThickness(int thickness) {
+		this.thickness = thickness;}
 
 	public String getName() {
 		return name;

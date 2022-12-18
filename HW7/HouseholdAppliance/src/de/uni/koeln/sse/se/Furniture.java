@@ -23,7 +23,9 @@ public class Furniture implements HouseholdItem{
 	}
 
 
-	
+	public void accept(Visitor v) {
+		v.visitFurniture(this);
+	}
 
 //Getters and Setters
 
